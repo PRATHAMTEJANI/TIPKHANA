@@ -4,6 +4,9 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
+// Import Firebase Admin (make sure firebase.js exists)
+const admin = require('./firebase'); // <-- add this line
+
 const authRoutes = require('./routes/auth');
 const fileRoutes = require('./routes/files');
 
@@ -53,6 +56,7 @@ app.use('*', (req, res) => {
   res.status(404).json({ error: 'Route not found' });
 });
 
+// Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV}`);
