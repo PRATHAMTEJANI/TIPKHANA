@@ -20,7 +20,7 @@ export function FileProvider({ children }) {
   const [sortOrder, setSortOrder] = useState('desc');
 
   // API base URL
-  const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+  const API_BASE = process.env.REACT_APP_API_URL || 'https://tipkhana.onrender.com';
 
   // Get auth token
   const getAuthToken = async () => {
@@ -177,3 +177,4 @@ export function FileProvider({ children }) {
     </FileContext.Provider>
   );
 }
+
